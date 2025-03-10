@@ -1,5 +1,5 @@
 // initial time
-const initialTime = 0.1 * 60 // 25 minutes
+const initialTime = 25 * 60 // 25 minutes
 let timeRemaining = initialTime;
 let timerInterval;
 
@@ -33,7 +33,6 @@ function updateTime() {
 function startTimer() {
     console.log("starting");
     timerInterval = setInterval(updateTime, 1000);
-
 }
 
 function stopTimer() {
@@ -43,5 +42,7 @@ function stopTimer() {
 
 function resetTimer(resetButton) {
     console.log("reset");
+    stopTimer();
     timeRemaining = initialTime;
+    updateTimer();
 }
